@@ -1,0 +1,14 @@
+#pragma once
+
+#include <Arduino.h>
+
+constexpr uint32_t ESPRESSO_SEPOLIA_CHAIN_ID = 11155111UL;
+constexpr uint64_t ESPRESSO_ARKIV_CHAIN_ID = 60138453102ULL;
+constexpr size_t ESPRESSO_RADIO_MTU = 192;
+constexpr uint32_t ESPRESSO_SERIAL_BAUD = 115200;
+constexpr uint32_t ESPRESSO_MODEM_BAUD = 19200;
+
+constexpr int ESPRESSO_MODEM_RX_PIN = 16;
+constexpr int ESPRESSO_MODEM_TX_PIN = 17;
+
+constexpr const char* ESPRESSO_ARKIV_STORAGE_ADDRESS = "00000000000000000000000000000061726b6976";
