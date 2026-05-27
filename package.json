@@ -1,0 +1,29 @@
+{
+  "name": "espresso",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": ">=22 <25",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "dev:dashboard": "pnpm --filter @espresso/dashboard dev",
+    "dev:ground-station": "pnpm --filter @espresso/ground-station dev",
+    "lint": "turbo run lint",
+    "format": "biome format --write .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "vitest run tests/e2e"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@types/node": "^22.15.30",
+    "turbo": "^2.6.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  }
+}

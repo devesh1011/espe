@@ -1,0 +1,25 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.8/schema.json",
+  "files": {
+    "includes": ["**", "!**/dist/**", "!**/.next/**", "!**/.turbo/**", "!**/node_modules/**", "!firmware/.pio/**"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 110
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  }
+}
