@@ -69,8 +69,6 @@ TypeScript · pnpm + Turborepo · Hono (Node) · Next.js · viem · `@arkiv-netw
 
 ## Setup
 
-<<<<<<< HEAD
-=======
 ### 0. Hardware
 
 Two ESP32 nodes are needed: a **device** (user/offline signer) and a **node** (satellite ground receiver) that plugs into the host running the ground station. Both build from the same `firmware/` project (`esp32dev` board) — see [`firmware/README.md`](firmware/README.md) for wiring pins.
@@ -98,7 +96,6 @@ Two ESP32 nodes are needed: a **device** (user/offline signer) and a **node** (s
 
 The LoRa and Iridium radios are optional per transport: the serial path needs only the ESP32 + USB cable, the LoRa path needs the SX127x pair, and the satellite path needs both Iridium modems with airtime.
 
->>>>>>> b067f26a1a8faea716043a7e23d27e88a9a19de4
 ### 1. Install
 ```sh
 pnpm install
@@ -151,8 +148,4 @@ pnpm dev:dashboard
 - _Name · GitHub handle · wallet address_ (fill before submission)
 
 ## Demo
-<<<<<<< HEAD
 - _Deployed dashboard URL_ (fill before submission)
-=======
-- _Deployed dashboard URL_ (fill before submission)
->>>>>>> b067f26a1a8faea716043a7e23d27e88a9a19de4
