@@ -69,6 +69,33 @@ TypeScript · pnpm + Turborepo · Hono (Node) · Next.js · viem · `@arkiv-netw
 
 ## Setup
 
+### 0. Hardware
+
+Two ESP32 nodes are needed: a **device** (user/offline signer) and a **node** (satellite ground receiver) that plugs into the host running the ground station. Both build from the same `firmware/` project (`esp32dev` board) — see [`firmware/README.md`](firmware/README.md) for wiring pins.
+
+**Device — user/offline signer** (`pio run -e user-device`)
+
+| Part | Notes |
+| --- | --- |
+| ESP32 dev board | `esp32dev`, signs raw EVM tx offline |
+| SSD1306 OLED | 128×64, I2C address `0x3C` |
+| SX127x LoRa module | e.g. SX1276 / RFM95, + antenna for the LoRa path |
+| Iridium SBD modem | e.g. RockBLOCK 9603 on UART2 (19200 baud), + antenna and sky visibility for the satellite path |
+| USB cable | serial path + flashing |
+
+**Node — satellite ground receiver** (`pio run -e ground-receiver`)
+
+| Part | Notes |
+| --- | --- |
+| ESP32 dev board | `esp32dev`, polls the modem and forwards frames over USB serial |
+| SSD1306 OLED | 128×64, I2C address `0x3C` |
+| SX127x LoRa module | matching the device radio, + antenna |
+| Iridium SBD modem | e.g. RockBLOCK 9603 on UART2 (19200 baud), + antenna and sky visibility |
+| USB cable | connects to the host as `SERIAL_PORT_PATH` |
+| Host computer | runs the Node ground station + dashboard |
+
+The LoRa and Iridium radios are optional per transport: the serial path needs only the ESP32 + USB cable, the LoRa path needs the SX127x pair, and the satellite path needs both Iridium modems with airtime.
+
 ### 1. Install
 ```sh
 pnpm install
